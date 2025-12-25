@@ -205,18 +205,6 @@ All computations use **MajikMoney** and respect currency.
 
 ---
 
-### Inventory Management
-
-- metadata.inventory.stock → current stock
-- reduceStock(units) → reduces stock safely
-- isOutOfStock → boolean flag
-
-Unit-level computations:
-
-- `unitCost`, `unitProfit`, `unitMargin`, `price`
-
----
-
 ### Utilities
 
 - `validateSelf`(throwError?: boolean) → validates all required fields
@@ -319,7 +307,7 @@ Made with 💙 by [@thezelijah](https://github.com/jedlsf)
 
 - **Developer**: Josef Elijah Fabian
 - **GitHub**: [https://github.com/jedlsf](https://github.com/jedlsf)
-- **Project Repository**: [https://github.com/jedlsf/majik-product](https://github.com/jedlsf/majik-product)
+- **Project Repository**: [https://github.com/jedlsf/majik-service](https://github.com/jedlsf/majik-service)
 
 ---
 
