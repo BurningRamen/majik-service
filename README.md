@@ -49,7 +49,7 @@ MajikService manages:
 
 ---
 
-## [Full API Docs](https://www.thezelijah.word/tools/finance-majik-service/docs)
+## [Full API Docs](https://www.thezelijah.world/tools/finance-majik-service/docs)
 
 ---
 
@@ -73,7 +73,7 @@ import { ServiceType, RateUnit } from "@/SDK/tools/business/majik-service/enums"
 const service = MajikService.initialize(
   "Video Editing",
   ServiceType.TIME_BASED,
-  { amount: MajikMoney.fromMajor(50, "USD"), unit: RateUnit.PER_HOUR },
+  { amount: MajikMoney.fromMajor(50, "PHP"), unit: RateUnit.PER_HOUR },
   "Post-production services",
   "VIDEDIT001"
 );
@@ -96,14 +96,14 @@ import { ServiceType, RateUnit, CapacityPeriodResizeMode } from "@thezelijah/maj
 const videoEditing = MajikService.initialize(
   "Video Editing",
   ServiceType.TIME_BASED,
-  { amount: MajikMoney.fromMajor(50, "USD"), unit: RateUnit.PER_HOUR },
+  { amount: MajikMoney.fromMajor(50, "PHP"), unit: RateUnit.PER_HOUR },
   "Professional post-production video editing",
   "VIDEDIT001"
 )
   .setDescriptionHTML("<p>High-quality video editing for content creators.</p>")
   .setDescriptionSEO("Video editing service for YouTube, ads, and films")
-  .addCOS("Editor Labor", MajikMoney.fromMajor(20, "USD"), 1, "hour")
-  .addCOS("Software License", MajikMoney.fromMajor(5, "USD"), 1, "month")
+  .addCOS("Editor Labor", MajikMoney.fromMajor(20, "PHP"), 1, "hour")
+  .addCOS("Software License", MajikMoney.fromMajor(5, "PHP"), 1, "month")
   .generateCapacityPlan(12, 160) // 12 months, 160 hours per month
   .recomputeCapacityPeriod("2025-01", "2025-12", CapacityPeriodResizeMode.DISTRIBUTE);
 

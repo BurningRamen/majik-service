@@ -1,6 +1,6 @@
 {
   "name": "@thezelijah/majik-service",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Majik Service is a fully-featured class representing a service in the Majik system, designed for financial management, cost tracking, and capacity planning. It provides utilities for computing revenue, profit, margins, COS (Cost of Service), and net income on a per-month basis. Chainable setter methods make it easy to construct and update services fluently.",
   "license": "ISC",
   "author": "Zelijah",
