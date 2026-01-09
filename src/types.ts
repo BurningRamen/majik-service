@@ -107,3 +107,19 @@ export interface ServiceSettings {
   visibility: ServiceVisibility;
   system?: { isRestricted: boolean; restrictedUntil?: ISODateString };
 }
+
+export interface MajikServiceJSON {
+  __type: "MajikService";
+  __object: "json";
+  id: ServiceID;
+  slug: string;
+  name: string;
+  category: string;
+  rate: ServiceRate;
+  status: ServiceStatus;
+  type: ServiceType;
+  timestamp: ISODateString;
+  last_update: ISODateString;
+  metadata: ServiceMetadata;
+  settings: ServiceSettings;
+}

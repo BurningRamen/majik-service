@@ -6,6 +6,7 @@ import {
 import {
   COSItem,
   ISODateString,
+  MajikServiceJSON,
   MonthlyCapacity,
   ObjectType,
   ServiceID,
@@ -1036,6 +1037,10 @@ export class MajikService {
     return this.metadata.cos;
   }
 
+  get costBreakdown(): readonly COSItem[] {
+    return this.cos;
+  }
+
   getCOS(month: YYYYMM): MajikMoney {
     if (!isValidYYYYMM(month)) throw new Error("Invalid month");
     if (!this.metadata.capacityPlan) return this.DEFAULT_ZERO();
@@ -1123,10 +1128,10 @@ export class MajikService {
 
   /**
    * Converts the current MajikService object to a plain JavaScript object (JSON).
-   * @returns {object} - The plain object representation of the MajikService instance.
+   * @returns {MajikServiceJSON} - The plain object representation of the MajikService instance.
    */
-  toJSON(): object {
-    const preJSON = {
+  toJSON(): MajikServiceJSON {
+    const preJSON: MajikServiceJSON = {
       __type: "MajikService",
       __object: "json",
       id: this.id,
@@ -1142,7 +1147,7 @@ export class MajikService {
       settings: this.settings,
     };
 
-    const serializedMoney: object = serializeMoney(preJSON);
+    const serializedMoney: MajikServiceJSON = serializeMoney(preJSON);
 
     return serializedMoney;
   }
@@ -1155,16 +1160,16 @@ export class MajikService {
    * @throws Will throw an error if required properties are missing.
    */
 
-  static parseFromJSON(json: string | object): MajikService {
+  static parseFromJSON(json: string | MajikServiceJSON): MajikService {
     // If the input is a string, parse it as JSON
-    const rawParse: MajikService =
+    const rawParse: MajikServiceJSON =
       typeof json === "string"
         ? JSON.parse(json)
         : structuredClone
         ? structuredClone(json)
         : JSON.parse(JSON.stringify(json));
 
-    const parsedData: MajikService = deserializeMoney(rawParse);
+    const parsedData: MajikServiceJSON = deserializeMoney(rawParse);
     // Validate required properties
     if (!parsedData.id) {
       throw new Error("Missing required property: 'id'");
@@ -1208,10 +1213,14 @@ export class MajikService {
   }
 }
 
-export function isMajikServiceClass(item: MajikService): boolean {
+export function isMajikServiceClass(
+  item: MajikService | MajikServiceJSON
+): boolean {
   return item.__object === "class";
 }
 
-export function isMajikServiceJSON(item: MajikService): boolean {
+export function isMajikServiceJSON(
+  item: MajikService | MajikServiceJSON
+): boolean {
   return item.__object === "json";
 }
